@@ -3,13 +3,34 @@
 }
 
 @using BestRestaurants.Models;
+@model BestRestaurants.Models.Cuisine
 
 <h1>Add a cuisine</h1>
 
 @using (Html.BeginForm())
 {
-  @Html.LabelFor(model => model.Name)
-  @Html.TextBoxFor(model => model.Name)
+  @Html.LabelFor(model => model.Type)
+  @Html.TextBoxFor(model => model.Type)
   
-  <!-- @Html.LabelFor(model => model.) -->
+  @Html.LabelFor(model => model.SpiceLevel) 
+  <select id="SpiceLevel" name="SpiceLevel">
+    <option value="1">No spice</option>
+    <option value="2">A little hot</option>
+    <option value="3">getting hotter</option>
+    <option value="4">Very hot!</option>
+    <option value="5">AHHHHHHHHHH!!!</option>
+  </select>
+  
+  @Html.LabelFor(model => model.Continent) 
+  <select id="Continent" name="Continent">
+    <option>Europe</option>
+    <option>Asia</option>
+    <option>North American</option>
+    <option>South American</option>
+    <option>Africa</option>
+    <option>Oceania</option>
+    <option>Antartica</option>
+  </select>
+  
+  <input type="submit" value="Add new cuisine" />
 }

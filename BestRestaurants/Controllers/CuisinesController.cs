@@ -1,5 +1,9 @@
-using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc;
 using BestRestaurants.Models;
+using System.Collections.Generic;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace BestRestaurants.Controllers
 {
@@ -24,10 +28,30 @@ namespace BestRestaurants.Controllers
     [HttpPost]
     public ActionResult Create (Cuisine cuisine)
     {
-      _db.Cuisine.Add(cuisine);
+      _db.Cuisines.Add(cuisine);
       _db.SaveChanges();
-      returnToAction("Index");
+      return RedirectToAction("Index");
     }
 
+    public ActionResult Details(int id)
+    {
+      Cuisine thisCuisine = _db.Cuisines.FirstOrDefault(cuisine => cuisine.CuisineId == id);
+      return View(thisCuisine);
+    }
+
+    public ActionResult Delete(int id)
+    {
+      var thisCuisine = _db.Cuisines.FirstOrDefault(cuisine => cuisine.CuisineId == id);
+      return View(thisCuisine);
+    }
+
+    [HttpPost, ActionName("Delete")]
+    public ActionResult DeleteConfirmed(int id)
+    {
+      var thisCuisine = _db.Cuisines.FirstOrDefault(cuisine => cuisine.CuisineId == id);
+      _db.Cuisines.Remove(thisCuisine);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
   }
 }

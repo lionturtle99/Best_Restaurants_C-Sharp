@@ -1,0 +1,27 @@
+@{
+  Layout = "_Layout";
+}
+
+@model BestRestaurants.Models.Restaurant
+
+<h2>Restaurant Details</h2>
+
+<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+<h3>@Html.DisplayNameFor(model => model.PricePoint): 
+@for (int x = 0; x < Model.PricePoint; x++) 
+{
+  @("$")
+}
+</h3>
+<h3>@Html.DisplayNameFor(model => model.Vegan): 
+
+@if (Model.Vegan == true)
+{
+  @("yes")
+}
+else 
+{
+  @("no")
+}
+</h3>
+
