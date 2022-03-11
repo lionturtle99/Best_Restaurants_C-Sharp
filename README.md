@@ -1,6 +1,6 @@
 <h1 align="center">BestRestaurants</h1>
 
-#### By Liam Eller | [LinkedIn](https://www.linkedin.com/in/liamellerportland/) | [email](mailto:<liamthelastson@gmail.com>) | [website](https://lionturtle99.github.io/my-portfolio/)
+#### By: Liam Eller, Eric Crudup, & Daniel Lindsey
 
 #### _Terminal based bakery_
 
@@ -11,8 +11,8 @@
 * Markdown
 * CSS
 * Razor
-* ASP.NET Core
-* ASP.NET Core MVC
+* ASP .NET Core
+* ASP .NET Core MVC
 
 
 ## Description
@@ -57,7 +57,7 @@ _Note that the database will change based on the database we are connecting to a
 
 _[MIT](https://opensource.org/licenses/MIT)_
 
-Copyright (c) 2022 Liam Eller
+Copyright (c) 2022 Liam Eller, Eric Crudup, & Daniel Lindsey
 
 
 # NOTES:

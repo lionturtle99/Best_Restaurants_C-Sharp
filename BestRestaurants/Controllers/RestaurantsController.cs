@@ -40,5 +40,20 @@ namespace BestRestaurants.Controllers
       Restaurant thisRest = _db.Restaurants.FirstOrDefault( restaurant => restaurant.RestaurantId == id);
       return View(thisRest);
     }
+
+    public ActionResult Delete(int id)
+    {
+      var thisRestaurant = _db.Restaurants.FirstOrDefault(restaurant => restaurant.RestaurantId == id);
+      return View(thisRestaurant);
+    }
+
+    [HttpPost, ActionName("Delete")]
+    public ActionResult DeleteConfirmed(int id)
+    {
+      var thisRestaurant = _db.Restaurants.FirstOrDefault(restaurant => restaurant.RestaurantId == id);
+      _db.Restaurants.Remove(thisRestaurant);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
   }
 }
